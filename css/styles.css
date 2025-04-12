@@ -1,0 +1,631 @@
+/* 
+==============================================
+BJP Maharashtra Content Manual - Main Stylesheet
+==============================================
+*/
+
+/* 
+==============================================
+CSS Variables for Brand Colors and Typography
+==============================================
+*/
+:root {
+    /* BJP Brand Colors */
+    --bjp-saffron: #FF9933;
+    --bjp-green: #138808;
+    --bjp-blue: #000080;
+    --bjp-white: #FFFFFF;
+    --bjp-ash-grey: #F5F5F5;
+    --bjp-dark-grey: #333333;
+    
+    /* Typography Sizes */
+    --font-xxl: 2.5rem;
+    --font-xl: 2rem;
+    --font-lg: 1.5rem;
+    --font-md: 1.125rem;
+    --font-sm: 1rem;
+    --font-xs: 0.875rem;
+    
+    /* Spacing Variables */
+    --spacing-xxs: 0.25rem;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.14);
+}
+
+/* 
+==============================================
+CSS Reset and Base Styles
+==============================================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Lato', 'Nirmala UI', sans-serif;
+    color: var(--bjp-dark-grey);
+    line-height: 1.6;
+    background-color: var(--bjp-white);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', 'Nirmala UI', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    color: var(--bjp-blue);
+}
+
+h1 {
+    font-size: var(--font-xxl);
+}
+
+h2 {
+    font-size: var(--font-xl);
+}
+
+h3 {
+    font-size: var(--font-lg);
+}
+
+h4 {
+    font-size: var(--font-md);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--bjp-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--bjp-saffron);
+}
+
+ul, ol {
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button, .btn {
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Lato', 'Nirmala UI', sans-serif;
+    font-weight: 700;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    border: none;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--bjp-saffron);
+    color: var(--bjp-white);
+}
+
+.btn-primary:hover {
+    background-color: #FF8000;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+/* 
+==============================================
+Header and Navigation
+==============================================
+*/
+.main-header {
+    background-color: var(--bjp-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+}
+
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.header-titles {
+    flex: 1 1 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.title-english, .title-marathi {
+    margin-bottom: 0;
+}
+
+.title-marathi {
+    font-size: var(--font-xl);
+}
+
+.subtitle-english, .subtitle-marathi {
+    color: var(--bjp-saffron);
+    font-size: var(--font-sm);
+    margin-bottom: 0;
+}
+
+.language-switcher {
+    flex: 0 0 auto;
+}
+
+.language-switcher button {
+    background: none;
+    border: 1px solid var(--bjp-ash-grey);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xxs);
+    font-size: var(--font-xs);
+}
+
+.language-switcher button:hover {
+    background-color: var(--bjp-ash-grey);
+}
+
+.main-navigation {
+    background-color: var(--bjp-blue);
+    padding: var(--spacing-xs) 0;
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-md);
+}
+
+.main-navigation a {
+    color: var(--bjp-white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    display: block;
+    border-radius: var(--radius-sm);
+}
+
+.main-navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-navigation .active a {
+    background-color: var(--bjp-saffron);
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--bjp-blue);
+    border-radius: 3px;
+    left: 0;
+    transition: all 0.25s ease;
+}
+
+.mobile-menu-toggle span:nth-child(1) {
+    top: 0px;
+}
+
+.mobile-menu-toggle span:nth-child(2) {
+    top: 10px;
+}
+
+.mobile-menu-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+/* 
+==============================================
+Language Support
+==============================================
+*/
+.title-marathi, .text-marathi, .nav-marathi, .link-marathi, .subtitle-marathi {
+    display: none;
+}
+
+body.lang-mr .title-english, 
+body.lang-mr .text-english, 
+body.lang-mr .nav-english, 
+body.lang-mr .link-english,
+body.lang-mr .subtitle-english {
+    display: none;
+}
+
+body.lang-mr .title-marathi, 
+body.lang-mr .text-marathi, 
+body.lang-mr .nav-marathi, 
+body.lang-mr .link-marathi,
+body.lang-mr .subtitle-marathi {
+    display: block;
+}
+
+/* 
+==============================================
+Intro Section
+==============================================
+*/
+.intro-section {
+    background: linear-gradient(135deg, var(--bjp-saffron) 0%, #FF8000 100%);
+    color: var(--bjp-white);
+}
+
+.intro-section .container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.intro-content {
+    flex: 1 1 60%;
+}
+
+.intro-visual {
+    flex: 1 1 40%;
+}
+
+.section-title {
+    color: var(--bjp-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.intro-section .section-title {
+    color: var(--bjp-white);
+}
+
+.intro-text p {
+    margin-bottom: var(--spacing-md);
+}
+
+.manual-preview {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+}
+
+.preview-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
+/* 
+==============================================
+Section Cards
+==============================================
+*/
+.sections-overview {
+    background-color: var(--bjp-white);
+}
+
+.sections-overview .section-title {
+    color: var(--bjp-blue);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.section-card {
+    background-color: var(--bjp-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    padding: var(--spacing-md);
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.section-icon {
+    flex: 0 0 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-md);
+}
+
+.section-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.section-content {
+    flex: 1 1 auto;
+}
+
+.section-content h3 {
+    color: var(--bjp-saffron);
+    margin-bottom: var(--spacing-xs);
+}
+
+.section-link {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--bjp-saffron);
+    color: var(--bjp-white);
+    border-radius: var(--radius-sm);
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.section-link:hover {
+    background-color: #FF8000;
+    color: var(--bjp-white);
+}
+
+/* 
+==============================================
+Content Page Styles
+==============================================
+*/
+.page-header {
+    background-color: var(--bjp-saffron);
+    color: var(--bjp-white);
+    padding: var(--spacing-lg) 0;
+}
+
+.page-title {
+    margin-bottom: 0;
+    color: var(--bjp-white);
+}
+
+.page-description {
+    margin-top: var(--spacing-xs);
+    max-width: 800px;
+}
+
+.content-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.content-section:nth-child(even) {
+    background-color: var(--bjp-ash-grey);
+}
+
+.content-section .section-title {
+    color: var(--bjp-blue);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.content-card {
+    background-color: var(--bjp-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.content-card h3 {
+    color: var(--bjp-saffron);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 
+==============================================
+Footer
+==============================================
+*/
+.main-footer {
+    background-color: var(--bjp-blue);
+    color: var(--bjp-white);
+    padding: var(--spacing-xl) 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-branding {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-right: var(--spacing-md);
+}
+
+.footer-titles h4 {
+    color: var(--bjp-white);
+    margin-bottom: 0;
+}
+
+.footer-link-group h5 {
+    color: var(--bjp-saffron);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-link-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-link-group li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-link-group a {
+    color: var(--bjp-white);
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.footer-link-group a:hover {
+    opacity: 1;
+    color: var(--bjp-saffron);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-md);
+    text-align: center;
+}
+
+/* 
+==============================================
+Responsive Styles
+==============================================
+*/
+@media (max-width: 992px) {
+    .intro-section .container {
+        flex-direction: column;
+    }
+    
+    .intro-content, .intro-visual {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .main-navigation ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bjp-blue);
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .main-navigation.open ul {
+        display: flex;
+    }
+    
+    .mobile-menu-toggle.open span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+    
+    .mobile-menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 10px;
+    }
+    
+    .section-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --font-xxl: 2rem;
+        --font-xl: 1.75rem;
+        --font-lg: 1.5rem;
+        --font-md: 1.25rem;
+    }
+    
+    .header-inner {
+        flex-wrap: wrap;
+    }
+    
+    .header-titles {
+        order: 3;
+        flex: 1 1 100%;
+        padding: var(--spacing-sm) 0 0;
+        text-align: center;
+    }
+    
+    .title-english, .title-marathi {
+        font-size: var(--font-xl);
+    }
+}
